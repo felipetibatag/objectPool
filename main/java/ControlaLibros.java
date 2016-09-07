@@ -8,8 +8,13 @@ public class ControlaLibros {
     private DaoLibro daoLibro;
     private Libro libro;
 
-    public ControlaLibros() throws SQLException, ClassNotFoundException {
+    public ControlaLibros() throws Exception {
         daoLibro=new DaoLibro();
+        libro=new Libro();
+    }
+
+    public ControlaLibros(DaoLibro daoLibro) {
+        this.daoLibro = daoLibro;
         libro=new Libro();
     }
 
@@ -21,6 +26,14 @@ public class ControlaLibros {
     }
     public int editar() throws SQLException {
         return daoLibro.editar(libro);
+    }
+
+    public DaoLibro getDaoLibro() {
+        return daoLibro;
+    }
+
+    public void setDaoLibro(DaoLibro daoLibro) {
+        this.daoLibro = daoLibro;
     }
 
     public Libro getLibro() {

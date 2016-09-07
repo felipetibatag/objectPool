@@ -10,8 +10,21 @@ import java.util.ArrayList;
 public class DaoLibro {
     private PreparedStatement preparedStatement;
     private Connection connection;
-    public DaoLibro() throws SQLException, ClassNotFoundException {
-        connection=Conexion.getConnection();
+    //private Conexion2 conexion2;
+    //private GenericObjectPool<Conexion2>pool;
+    public DaoLibro() throws Exception {
+        //connection=Conexion.getConnection();
+        /*conexion2=null;
+        conexion2=pool.borrowObject();
+        connection=conexion2.getConexion();
+        if(conexion2!=null){
+            pool.returnObject(conexion2);
+        }
+*/
+    }
+
+    public DaoLibro(Connection connection) {
+        this.connection = connection;
     }
 
     public int guardar(Libro libro) throws SQLException {

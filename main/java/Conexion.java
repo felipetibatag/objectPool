@@ -8,6 +8,7 @@ import java.sql.SQLException;
 public class Conexion {
     private static Connection cx;
 
+
     public Conexion() throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
         cx= DriverManager.getConnection("jdbc:postgresql://192.168.56.1:5555/swii","swii","swii");
